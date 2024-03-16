@@ -37,20 +37,18 @@ int writeFile(string filename)
     return num_employees;
 }
 
-
 int readFile(string filename){
-    ifstream ifs;
-    int num_employees;
-
-    ifs.open(filename);
+    ifstream ifs(filename);
     if (!ifs)
     {
         cout << "Read File Open Error\n";
-        exit(0);
+        return 0;
     }
     
-    string id, name, department;
-    int salary; 
+    int id;
+    string name, department;
+    double salary; 
+    int num_employees = 0;
     while (ifs >> id >> name >> department >> salary) {
         cout << id << " " << name << " " << department << " " << salary << "\n";
         num_employees++;
