@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-int writeFile(string filename)
+int writeFile(string filename = "employee.txt")
 {
     ofstream ofs(filename);
     if (!ofs)
@@ -37,7 +37,7 @@ int writeFile(string filename)
     return num_employees;
 }
 
-int readFile(string filename){
+int readFile(string filename = "employee.txt"){
     ifstream ifs(filename);
     if (!ifs)
     {
